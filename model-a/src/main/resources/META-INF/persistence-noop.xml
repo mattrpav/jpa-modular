@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="hyte-orders-noop" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<mapping-file>META-INF/orm.xml</mapping-file>
+		<class>io.hyte.openjpa.model.a.Order</class>
+		<class>io.hyte.openjpa.model.a.OrderItem</class>
+		<class>io.hyte.openjpa.model.a.SimpleOrderItem</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:file:./target/ordering;AUTO_SERVER=TRUE;LOG=0;CACHE_SIZE=65536;LOCK_MODE=0;UNDO_LOG=0;DEFRAG_ALWAYS=true;COMPRESS=true;"/>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.user" value=""/>
+			<property name="javax.persistence.jdbc.password" value=""/>
+		</properties>
+	</persistence-unit>
+</persistence>

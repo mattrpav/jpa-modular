@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<entity class="io.hyte.openjpa.model.b.SpecialOrderItem">
+		<table name="order_items_special" />
+		<primary-key-join-column name="order_item_id" referenced-column-name="order_item_id"/>
+		<discriminator-value>io.hyte.openjpa.model.b.SpecialOrderItem</discriminator-value>
+		<attributes>
+			<basic name="special">
+				<column name="special" />
+			</basic>
+		</attributes>
+	</entity>
+
+</entity-mappings>   
