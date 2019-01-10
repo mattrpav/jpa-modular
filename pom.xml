@@ -18,7 +18,8 @@
 	<modules>
 		<module>model-a</module>
 		<module>model-b</module>
-		<module>model-c</module> 
+		<module>model-c</module>
+		<module>model-all</module>
 		<module>service-x</module>
 		<module>itest</module> 
 	</modules>

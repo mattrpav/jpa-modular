@@ -24,9 +24,9 @@ import io.hyte.openjpa.OrderServiceJpa;
 import io.hyte.openjpa.model.a.Order;
 import io.hyte.openjpa.model.a.SimpleOrderItem;
 import io.hyte.openjpa.model.b.SpecialOrderItem;
-import io.hyte.openjpa.model.c.ExtraSpecialOrderItem;
+//import io.hyte.openjpa.model.c.ExtraSpecialOrderItem;
 
-public class OpenJPAModularTest {
+public class JpaModularTest {
 	
 	protected static EntityManagerFactory entityManagerFactory = null;
 	protected OrderServiceJpa orderServiceJpa = null;
@@ -39,13 +39,13 @@ public class OpenJPAModularTest {
 		tmpEm.getTransaction().begin();
 		
 		Connection connection = tmpEm.unwrap(java.sql.Connection.class);
-		RunScript.execute(connection, new InputStreamReader(ExtraSpecialOrderItem.class.getResourceAsStream("/db/h2/h2-orders-extraspecial-drop.sql")));
+//		RunScript.execute(connection, new InputStreamReader(ExtraSpecialOrderItem.class.getResourceAsStream("/db/h2/h2-orders-extraspecial-drop.sql")));
 		RunScript.execute(connection, new InputStreamReader(SpecialOrderItem.class.getResourceAsStream("/db/h2/h2-orders-special-drop.sql")));
 	  	RunScript.execute(connection, new InputStreamReader(Order.class.getResourceAsStream("/db/h2/h2-orders-drop.sql")));
 	  	
 	  	RunScript.execute(connection, new InputStreamReader(Order.class.getResourceAsStream("/db/h2/h2-orders-create.sql")));
 		RunScript.execute(connection, new InputStreamReader(SpecialOrderItem.class.getResourceAsStream("/db/h2/h2-orders-special-create.sql")));
-		RunScript.execute(connection, new InputStreamReader(ExtraSpecialOrderItem.class.getResourceAsStream("/db/h2/h2-orders-extraspecial-create.sql")));
+//		RunScript.execute(connection, new InputStreamReader(ExtraSpecialOrderItem.class.getResourceAsStream("/db/h2/h2-orders-extraspecial-create.sql")));
 	  	
 	  	tmpEm.getTransaction().commit();
 	}
@@ -115,14 +115,14 @@ public class OpenJPAModularTest {
 		specialOrderItem.setQuantity(2);
 		specialOrderItem.setSku("sku-special");
 
-		ExtraSpecialOrderItem extraSpecialOrderItem = new ExtraSpecialOrderItem();
-		extraSpecialOrderItem.setExtraSpecial("extra special stuff");
-		extraSpecialOrderItem.setQuantity(3);
-		extraSpecialOrderItem.setSku("sku-extraspecial");
+//		ExtraSpecialOrderItem extraSpecialOrderItem = new ExtraSpecialOrderItem();
+//		extraSpecialOrderItem.setExtraSpecial("extra special stuff");
+//		extraSpecialOrderItem.setQuantity(3);
+//		extraSpecialOrderItem.setSku("sku-extraspecial");
 		
 		order.getOrderItems().add(simpleOrderItem);
 		order.getOrderItems().add(specialOrderItem);
-		order.getOrderItems().add(extraSpecialOrderItem);
+//		order.getOrderItems().add(extraSpecialOrderItem);
 		return order;
 	}
 }

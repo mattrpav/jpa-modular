@@ -10,11 +10,11 @@
 		<discriminator-column name="order_item_type" discriminator-type="STRING" length="255" />
 		<attributes>
 			<id name="orderItemId">
-				<column name="order_item_id" />
+				<column name="order_item_id" insertable="false" updatable="false"/>
 				<generated-value strategy="IDENTITY" />
 			</id>
 			<basic name="orderId">
-				<column name="order_id" />
+				<column name="order_id" insertable="false" updatable="false"/>
 			</basic>
 			<basic name="quantity">
 				<column name="quantity" />
@@ -40,7 +40,7 @@
 		<table name="orders" />
 		<attributes>
 			<id name="orderId">
-				<column name="order_id"/>
+				<column name="order_id" insertable="false" updatable="false"/>
 				<generated-value strategy="IDENTITY"/>
 			</id>
 			<basic name="createdBy">
